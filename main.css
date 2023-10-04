@@ -4,207 +4,134 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
   font-family: "Roboto", sans-serif;
 }
 
-html {
-  overflow-x: hidden;
+a {
+  text-decoration: none;
 }
 
-/* Estilos para telas maiores (desktop) */
+/* Estilizar para desktop */
 
-@media screen and (min-width: 768px) {
-  /* Aumentar a margem esquerda do container */
-  .container {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-  }
+.conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 
-  /* Ajustar o alinhamento do conteúdo do header */
-  header .container {
-    display: flex;
-    justify-content: space-between;
+.barraNavegação {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: 2px solid blueviolet;
+}
+
+.tituloPrincipal {
+  margin-bottom: 32px;
+  padding: 16px;
+  margin: 16px;
+}
+
+/* Estilizar para celular */
+@media screen and (max-width: 560px) {
+  .barraNavegação {
+    flex-direction: column;
     align-items: center;
   }
-
-  /* Estilizar o header para desktop */
-  header {
-    max-width: 100%;
-    height: 100%;
-    background-color: #add8e6;
-    border-bottom: 5px solid black;
-  }
-
-  /* Adicionar espaço no container */
-  .container {
-    padding: 18px 0;
-  }
-
-  /* Estilizar os botões do header */
-  .container a {
-    cursor: pointer;
-  }
-
-  /* Estilizar a seção de destaque para desktop */
-  .destaque .sobre a {
-    display: flex;
-    font-size: 2em;
-  }
-
-  /* Estilizar imagens dentro da seção de destaque */
-  .destaque .sobre img {
-    margin-right: 8px;
-  }
-
-  /* Estilizar h2 para desktop */
-  h2 {
-    margin-bottom: 32px;
-  }
-
-  /* Estilizar os artigos de produtos para desktop */
-  .sports {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    column-gap: 1%;
-    row-gap: 5%;
-  }
-
-  /* Estilizar imagens de produtos para desktop */
-  .sports img {
-    height: 200px;
-    width: 200px;
-  }
-
-  /* Estilizar botões de adicionar ao carrinho para desktop */
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
 }
 
-/* Estilos para telas menores (tablets e celulares) */
+/* Estilizar para desktop */
+.destaque {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
 
-@media screen and (max-width: 767px) {
-  /* Tornar o conteúdo do site em blocos empilhados */
-  .conteudo {
+.sobre {
+  margin-left: 32px;
+}
+
+/* Estilizar para celular */
+@media screen and (max-width: 560px) {
+  .destaque {
     display: block;
   }
 
-  /* Ajustar a largura máxima do container */
-  .container {
-    max-width: 90%;
-    margin-left: 0;
-  }
-
-  /* Estilizar os botões do header para telas menores */
-  .container a {
-    cursor: pointer;
-  }
-
-  /* Estilizar a seção de destaque para telas menores */
-  .destaque .sobre a {
-    display: block;
-    font-size: 1.5em;
-  }
-
-  /* Remover margem à direita das imagens na seção de destaque */
-  .destaque .sobre img {
-    margin-right: 0;
-  }
-
-  /* Tornar os artigos de produtos em blocos empilhados */
-  .sports {
-    display: block;
-  }
-
-  /* Ajustar margem inferior dos artigos de produtos */
-  .sports {
-    margin-bottom: 32px;
-  }
-
-  /* Ajustar o alinhamento do conteúdo do header para telas menores */
-  header .container {
-    flex-direction: column;
+  .destaque img {
+    max-width: 300px;
   }
 }
 
-/* Estilos para telas maiores (desktop) */
+/* Estilizar para desktop */
+.tituloPropagandaLoja {
+  font-style: italic;
+  text-align: center;
+  padding: 32px;
+}
 
-@media screen and (min-width: 768px) {
-  /* ... (seus estilos existentes) ... */
+.containerSports {
+  display: grid;
+  justify-content: space-around;
+}
 
-  /* Estilizar os botões de adicionar ao carrinho para desktop */
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.sports {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+}
 
-  /* Estilizar os artigos de produtos para desktop */
+/* Estilizar para tablet */
+@media screen and (max-width: 920px) {
   .sports {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    column-gap: 1%;
-    row-gap: 5%;
-  }
-
-  /* Estilizar imagens de produtos para desktop */
-  .sports img {
-    height: 200px;
-    width: 200px;
-  }
-
-  /* Estilizar os detalhes do produto (h3 e p) para desktop */
-  .sobre-loja a {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column; /* Alinhar h3 e p verticalmente */
-    align-items: center; /* Centralizar o conteúdo horizontalmente */
-  }
-
-  /* Estilizar h3 dos produtos para desktop */
-  .sobre-loja h3 {
-    font-size: 1.2em; /* Tamanho da fonte ajustado */
-    margin-top: 8px; /* Espaço entre a imagem e o texto */
-  }
-
-  /* Estilizar p dos produtos para desktop */
-  .sobre-loja p {
-    font-size: 1em; /* Tamanho da fonte ajustado */
-    margin-top: 8px; /* Espaço entre o h3 e o p */
-    color: #333; /* Cor do texto ajustada */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 }
 
-/* Estilos para telas menores (tablets e celulares) */
-
-@media screen and (max-width: 767px) {
-  /* ... (seus estilos existentes) ... */
-
-  /* Estilizar os detalhes do produto (h3 e p) para telas menores */
-  .sobre-loja a {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column; /* Alinhar h3 e p verticalmente */
-    align-items: center; /* Centralizar o conteúdo horizontalmente */
+/* Estilizar para celular */
+@media screen and (max-width: 560px) {
+  .sports {
+    grid-template-columns: 1fr;
   }
+}
 
-  /* Estilizar h3 dos produtos para telas menores */
-  .sobre-loja h3 {
-    font-size: 1.2em; /* Tamanho da fonte ajustado */
-    margin-top: 8px; /* Espaço entre a imagem e o texto */
-  }
+/* Estilizar para desktop */
+.sobre-loja {
+  background-color: #f6f6f6;
+  text-align: center;
+  max-width: 240px;
+  padding: 8px;
+}
 
-  /* Estilizar p dos produtos para telas menores */
-  .sobre-loja p {
-    font-size: 1em; /* Tamanho da fonte ajustado */
-    margin-top: 8px; /* Espaço entre o h3 e o p */
-    color: #333; /* Cor do texto ajustada */
-  }
+.sobre-loja a {
+  color: #000;
+}
+
+/* Estilizar imagens de produtos para desktop */
+.sports img {
+  width: 220px;
+  height: 200px;
+}
+
+/* Estilizar titulos de produtos*/
+.cardTitle {
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Estilizar os botões de adicionar ao carrinho para desktop */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
